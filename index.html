@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="calculator">
+        <form name="forms" class="calc">
+            <input type="text" name="answer" class="display" id="screen" placeholder="0" readonly>
+
+            <!-- <input class="clear" type="button" value="AC" onclick="forms.answer.value = '' ">
+            <input class="del" type="button" value="DEL" onclick="forms.answer.value = forms.answer.value.slice(0, -1)"> -->
+            
+            <input class="clear" type="button" value="AC" onclick="clr()">
+            <input class="del" type="button" value="DEL" onclick="del()">
+            <input type="button" value="%" onclick="display('%')">
+            <input type="button" value="/" onclick="display('/')">
+
+
+            <input type="button" value="7" onclick="display(7)">
+            <input type="button" value="8" onclick="display(8)">
+            <input type="button" value="9" onclick="display(9)">
+            <input type="button" value="x" onclick="display('*')">
+
+            <input type="button" value="4" onclick="display(4)">
+            <input type="button" value="5" onclick="display(5)">
+            <input type="button" value="6" onclick="display(6)">
+            <input type="button" value="-" onclick="display('-')">
+
+            <input type="button" value="1" onclick="display(1)">
+            <input type="button" value="2" onclick="display(2)">
+            <input type="button" value="3" onclick="display(3)">
+            <input type="button" value="+" onclick="display('+')">
+
+            <input type="button" value="0" onclick="display(0)">
+            <input type="button" value="00" onclick="display(00)">
+            <input type="button" value="." onclick="display('.')">
+            <input class="equal" type="button" value="=" onclick="equal()">
+
+
+        </form>
+    </div>
+    <script>
+
+        let output=document.getElementById("screen");
+
+        function display(num){
+            output.value += num;
+        }
+
+        function del(){
+            output.value = output.value.slice(0,-1);
+        }
+
+        function clr(){
+            output.value = "";
+        }
+
+        function equal(){
+            output.value = eval( output.value); 
+        }
+    </script>
+</body>
+</html>
